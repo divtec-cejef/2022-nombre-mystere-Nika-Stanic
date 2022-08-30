@@ -1,13 +1,15 @@
 /**
-* Jeu du nombre mystère
-* @author  Steve Fallet
-* @version 0.1
-* @since   2018-09-09 (date de création)
-*/
+ * Jeu du nombre mystère
+ * @author  Nika Stanic
+ * @version 0.1
+ * @since   2022-08-30
+ */
 
 // Main IIFE (Immediately-Invoked Function Expression, se prononce "iffy")
 (function main() {
     "use strict";
+    let reponse;
+    let nbEssais = 0;
 
     /**
      * Retourne un nombre entier aléatoire compris entre min et max
@@ -18,5 +20,20 @@
     function tireNombre(min, max) {
         return Math.floor(Math.random() * (max - min) + min);
     }
+
+    do {
+        let nbMystere = tireNombre(1, 100);
+        reponse = Number(prompt('Le nombre a deviner est compris entre 1 et 100'));
+        nbEssais++;
+
+        if (reponse === nbMystere) {
+            alert(`Vous avez trouver apres ${nbEssais} essai`);
+        } else if (reponse > nbMystere) {
+            alert(`C'est moins !`);
+        } else if (reponse < nbMystere) {
+            alert(`C'est plus !`);
+        }
+
+    } while (reponse >= 1 || reponse <= 100);
 
 }()); // main IIFE
