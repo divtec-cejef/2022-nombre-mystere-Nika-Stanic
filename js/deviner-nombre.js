@@ -28,9 +28,9 @@
 
         if (reponse === nbMystere) {
             alert(`Vous avez trouver apres ${nbEssais} essai`);
-        } else if (reponse > nbMystere) {
+        } if (reponse > nbMystere) {
             alert(`C'est moins !`);
-        } else if (reponse < nbMystere) {
+        } else {
             alert(`C'est plus !`);
         }
 
