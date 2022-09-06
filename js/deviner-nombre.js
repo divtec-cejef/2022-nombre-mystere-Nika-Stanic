@@ -24,7 +24,7 @@
     do {
         let nbMystere = tireNombre(1, 100);
         reponse = Number(prompt('Le nombre a deviner est compris entre 1 et 100'));
-        nbEssais++;
+        nbEssais+=1;
 
         if (reponse === nbMystere) {
             alert(`Vous avez trouver apres ${nbEssais} essai`);
